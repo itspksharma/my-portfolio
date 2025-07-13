@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Chrome Mood Tab Extension",
+    "desc": "Live tab theme with weather, quotes, search, moods",
+    "github": "https://github.com/itspksharma/chrome-mood-tab-extension"
+  },
+  {
+    "name": "Hospital Management System (ASP.NET)",
+    "desc": "Basic patient/admin panel in C#",
+    "github": "https://github.com/itspksharma/Hospital_MS"
+  },
+  {
+    "name": "Portfolio Website",
+    "desc": "This website - fully responsive, dynamic",
+    "github": "https://github.com/itspksharma/portfolio"
+  }
+]

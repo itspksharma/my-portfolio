@@ -1,0 +1,34 @@
+[
+  { "name": "JavaScript", "icon": "🟨", "category": "languages" },
+  { "name": "HTML5", "icon": "🟧", "category": "languages" },
+  { "name": "CSS3", "icon": "🔷", "category": "languages" },
+  { "name": "XML", "icon": "🗂️", "category": "languages" },
+  { "name": "Python (Basic)", "icon": "🐍", "category": "languages" },
+  { "name": "SQL (Basic)", "icon": "💾", "category": "languages" },
+
+  { "name": "React.js", "icon": "⚛️", "category": "frameworks" },
+  { "name": "Redux", "icon": "🌀", "category": "frameworks" },
+  { "name": "Express.js", "icon": "🚂", "category": "frameworks" },
+  { "name": "Node.js", "icon": "🟩", "category": "frameworks" },
+  { "name": "Tailwind CSS", "icon": "🌬️", "category": "frameworks" },
+  { "name": "Bootstrap", "icon": "🎀", "category": "frameworks" },
+
+  { "name": "VS Code", "icon": "🧠", "category": "tools" },
+  { "name": "Git", "icon": "🔧", "category": "tools" },
+  { "name": "GitHub", "icon": "🐱", "category": "tools" },
+  { "name": "MongoDB Compass", "icon": "🧭", "category": "tools" },
+  { "name": "NPM/Yarn", "icon": "📦", "category": "tools" },
+  { "name": "MS Office", "icon": "📊", "category": "tools" },
+  { "name": "Tally", "icon": "💼", "category": "tools" },
+  { "name": "Canva", "icon": "🎨", "category": "tools" },
+
+  { "name": "MongoDB Atlas", "icon": "☁️", "category": "platforms" },
+  { "name": "Firebase", "icon": "🔥", "category": "platforms" },
+  { "name": "Netlify", "icon": "🌐", "category": "platforms" },
+  { "name": "RESTful APIs", "icon": "🔗", "category": "platforms" },
+
+  { "name": "Problem Solving", "icon": "🧩", "category": "soft" },
+  { "name": "Fast Learner", "icon": "⚡", "category": "soft" },
+  { "name": "Time Management", "icon": "⏱️", "category": "soft" },
+  { "name": "UI/UX Awareness", "icon": "🎯", "category": "soft" }
+]

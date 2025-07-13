@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pawan Sharma | Portfolio</title>
+  <link rel="icon" href="assets/favicon.ico" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://unpkg.com/scrollreveal"></script>
+</head>
+<body>
+  <header>
+    <video autoplay muted loop playsinline class="bg-video">
+        <source src="assets/bg-video.webm" type="video/webm">
+        Your browser does not support the video tag.
+    </video>
+    <noscript>
+        <img src="assets/bg-fallback.jpg" alt="Background" class="fallback-img" />
+    </noscript>
+
+    <div class="container">
+      <img src="assets/profile.jpg" alt="Pawan Sharma" class="profile-img"/>
+      <h1 id="typewriter"></h1>
+      <p class="subtitle">MERN Stack Developer | From Ledgers to Logic | Building Ideas That Work</p>
+      <div class="action-buttons">
+         <button id="theme-toggle">Toggle Theme</button>
+        <a href="assets/resume.pdf" download class="resume-btn">Download Resume</a>
+      </div>
+    </div>
+  </header>
+
+    <nav id="mobile-nav">
+    <button onclick="toggleMenu()">☰</button>
+    <ul id="nav-list">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#certificates">Certificates</a></li>
+        <li><a href="#blogs">Blogs</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+    </nav>
+
+
+  <section id="about" class="section-tab active">
+    <h2>👨‍💻 My Journey So Far</h2>
+    <p>I'm a full-stack developer with an MCA degree, specializing in the MERN stack and modern web technologies. 
+        I’ve built projects using JavaScript, React, Node.js, MongoDB, and REST APIs. Alongside my academic foundation, 
+        I gained hands-on experience in tools like Tally and Excel, which gave me practical business insights that now help 
+        me build more user-centric digital solutions. I'm focused on creating scalable applications and continuously exploring
+         AI and cloud technologies to level up my development workflow.
+    </p>
+  </section>
+
+  <section id="projects" class="section-tab">
+    <h2>💼 Practical Projects & Ideas</h2>
+    <ul id="project-list">
+        <!-- This will be filled dynamically -->
+    </ul>
+  </section>
+
+  <section id="skills" class="section-tab">
+    <h2>🛠 Tech Stack I Use</h2>
+
+    <h3>Languages</h3>
+    <div class="skills-grid" id="lang-skills"></div>
+
+    <h3>Frameworks & Libraries</h3>
+    <div class="skills-grid" id="framework-skills"></div>
+
+    <h3>Productivity & Dev Tools</h3>
+    <div class="skills-grid" id="tool-skills"></div>
+
+    <h3>Platforms & APIs</h3>
+    <div class="skills-grid" id="platform-skills"></div>
+
+    <h3>Soft Skills</h3>
+    <div class="skills-grid" id="soft-skills"></div>
+  </section>
+
+  
+  <section id="education" class="section-tab"> 
+    <h2>🎓 My Academic</h2>
+    <ul id="edu-list"></ul>
+  </section>
+  <section id="certificates" class="section-tab">
+    <h2>📄 Certified Skills & Achievements</h2>
+    <ul id="cert-list"></ul>
+  </section>
+
+  <section id="blogs" class="section-tab">
+    <h2>🔍 Insights & Experiences</h2>
+    <ul id="blog-list"></ul>
+  </section>
+
+
+
+  <section id="contact" class="section-tab">
+    <h2>📬 Let’s Connect</h2>
+    <p>Email: <a href="mailto:pawansharma.rkl@gmail.com">pawansharma.rkl@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/itspksharma98" target="_blank">itspksharma98</a></p>
+    <p>WhatsApp: <a href="https://wa.me/919658901536" target="_blank">Chat Now</a></p>
+  </section>
+
+  <button id="scroll-top">⬆ Top</button>
+
+<footer>
+  <p>
+    All rights reserved. Made with ❤️ by 
+    <a href="https://www.linkedin.com/in/itspksharma98" target="_blank">Pawan Kumar Sharma</a> | © 2025
+  </p>
+</footer>
+
+
+
+  <script src="script.js"></script>
+  
+</body>
+</html>
