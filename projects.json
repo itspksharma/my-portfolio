@@ -1,17 +1,32 @@
 [
   {
-    "name": "Chrome Mood Tab Extension",
-    "desc": "Live tab theme with weather, quotes, search, moods",
+    "name": "Mood Tab - Chrome Extension",
+    "desc": "Live animated new tab with mood-based videos, quotes, weather, and search history.",
     "github": "https://github.com/itspksharma/chrome-mood-tab-extension"
   },
   {
-    "name": "Hospital Management System (ASP.NET)",
-    "desc": "Basic patient/admin panel in C#",
+    "name": "Hospital Management System",
+    "desc": "Basic hospital admin panel for managing patients, staff, appointments using ASP.NET.",
     "github": "https://github.com/itspksharma/Hospital_MS"
   },
   {
-    "name": "Portfolio Website",
-    "desc": "This website - fully responsive, dynamic",
-    "github": "https://github.com/itspksharma/portfolio"
+    "name": "Responsive Portfolio Website",
+    "desc": "Personal developer portfolio with dynamic sections using HTML, CSS, JS and JSON data.",
+    "github": "https://github.com/itspksharma/my-portfolio"
+  },
+  {
+    "name": "LifeLine - Blood Donor System (planned)",
+    "desc": "A full MERN stack app for donor registration, searching, urgent requests, and admin panel.",
+    "github": "https://github.com/itspksharma/lifeline-blood-donor-system"
+  },
+  {
+    "name": "Track-It - Expense Tracker (planned)",
+    "desc": "Simple personal expense tracker using local storage, chart.js and responsive layout.",
+    "github": "https://github.com/itspksharma/track-it-expense-tracker"
+  },
+  {
+    "name": "Teaste of Italia - Food Order App (coming soon)",
+    "desc": "Vegetarian food ordering web app with live menu, user login and admin order panel.",
+    "github": "https://github.com/itspksharma/teaste-of-italia-food-order-app"
   }
 ]

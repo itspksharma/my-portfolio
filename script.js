@@ -103,22 +103,22 @@ function toggleMenu() {
 fetch('projects.json')
   .then(response => response.json())
   .then(data => {
-    const projectList = document.getElementById('project-list');
-
+    const container = document.getElementById('project-cards');
     data.forEach(project => {
-      const li = document.createElement('li');
-      li.innerHTML = `
-        <strong>${project.name}</strong><br>
-        <em>${project.desc}</em><br>
-        <a href="${project.github}" target="_blank">View on GitHub</a>
+      const card = document.createElement('div');
+      card.className = 'project-card';
+      card.innerHTML = `
+        <h3>${project.name}</h3>
+        <p>${project.desc}</p>
+        <a href="${project.github}" target="_blank" class="project-btn">View on GitHub</a>
       `;
-      li.style.marginBottom = "20px";
-      projectList.appendChild(li);
+      container.appendChild(card);
     });
   })
   .catch(error => {
     console.error("Error loading project list:", error);
   });
+
   // ==================== LOAD SKILLS DYNAMICALLY ====================
   fetch('skills.json')
   .then(res => res.json())
@@ -142,8 +142,10 @@ fetch('education.json')
       const li = document.createElement('li');
       li.innerHTML = `
         <strong>${e.course}</strong><br>
-        ${e.university} - ${e.year}
-        ${e.link ? `<br><a href="${e.link}" target="_blank">Verify</a>` : ''}
+        ${e.university} – ${e.year}
+        ${e.location ? `<br><em>${e.location}</em>` : ''}
+        ${e.specialization ? `<br>Specialization: ${e.specialization}` : ''}
+        ${e.link ? `<br><a href="${e.link}" target="_blank">Verify Degree</a>` : ''}
       `;
       li.style.marginBottom = "15px";
       list.appendChild(li);
@@ -152,34 +154,47 @@ fetch('education.json')
   .catch(error => {
     console.error("Error loading education:", error);
   });
+
   //=================== LOAD CERTIFICATES DYNAMICALLY ====================
   fetch('certificates.json')
   .then(res => res.json())
   .then(data => {
-    const list = document.getElementById('cert-list');
+    const container = document.getElementById('cert-cards');
     data.forEach(cert => {
-      const li = document.createElement('li');
-      li.innerHTML = `<strong>${cert.title}</strong> - ${cert.organization} (${cert.year})`;
-      list.appendChild(li);
+      const card = document.createElement('div');
+      card.className = 'cert-card';
+      card.innerHTML = `
+        <h3>${cert.title}</h3>
+        <p>${cert.organization}</p>
+        <p class="cert-year">${cert.year}</p>
+        ${cert.link ? `<a href="${cert.link}" target="_blank" class="cert-btn">View Certificate</a>` : ''}
+      `;
+      container.appendChild(card);
     });
   })
   .catch(error => {
     console.error("Error loading certificates:", error);
   });
+
 // ==================== LOAD BLOGS DYNAMICALLY ====================
 fetch('blogs.json')
   .then(res => res.json())
   .then(data => {
-    const list = document.getElementById('blog-list');
+    const container = document.getElementById('blog-cards');
     data.forEach(blog => {
-      const li = document.createElement('li');
-      li.innerHTML = `<a href="${blog.link}" target="_blank">${blog.title}</a>`;
-      list.appendChild(li);
+      const card = document.createElement('div');
+      card.className = 'blog-card';
+      card.innerHTML = `
+        <h3>${blog.title}</h3>
+        <a href="${blog.link}" target="_blank" class="blog-btn">Read Blog</a>
+      `;
+      container.appendChild(card);
     });
   })
   .catch(error => {
     console.error("Error loading blogs:", error);
   });
+
 
 
 ScrollReveal().reveal('section-tab', {

@@ -3,8 +3,8 @@
   { "name": "HTML5", "icon": "🟧", "category": "languages" },
   { "name": "CSS3", "icon": "🔷", "category": "languages" },
   { "name": "XML", "icon": "🗂️", "category": "languages" },
-  { "name": "Python (Basic)", "icon": "🐍", "category": "languages" },
-  { "name": "SQL (Basic)", "icon": "💾", "category": "languages" },
+  { "name": "Python", "icon": "🧩", "category": "languages" },
+  { "name": "SQL", "icon": "💾", "category": "languages" },
 
   { "name": "React.js", "icon": "⚛️", "category": "frameworks" },
   { "name": "Redux", "icon": "🌀", "category": "frameworks" },
