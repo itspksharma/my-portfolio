@@ -49,3 +49,26 @@ my-portfolio/
 │ ├── profile.jpg
 │ └── resume.pdf
 
+## 📸 Screenshots
+
+### 🔹 Home Section
+![Homepage](assets/screenshots/homepage.png)
+
+### 🔹 Skills Section
+![Skills](assets/screenshots/skills.png)
+
+### 🔹 Projects Section
+![Projects](assets/screenshots/projects.png)
+
+
+### 🔹 Education Section
+![Homepage](assets/screenshots/education.png)
+
+### 🔹 Certificate Section
+![Skills](assets/screenshots/certificates.png)
+
+### 🔹 Blogs Section
+![Projects](assets/screenshots/blogs.png)
+
+### 🔹 Mobile-View
+![Projects](assets/screenshots/mobile-view.png)
