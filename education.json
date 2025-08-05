@@ -1,0 +1,32 @@
+[
+  {
+    "course": "Master of Computer Applications (MCA)",
+    "university": "Centurion University of Technology and Management",
+    "year": "2023",
+    "location": "Bhubaneswar, Odisha",
+    "specialization": "Full Stack Development",
+    "note": "Focused on advanced web technologies, AI tools, and building full-stack production-level projects.",
+    "link": "https://verification.cutm.ac.in/verify/2023/5b343d86-ed11-4456-a165-b877c090ca30"
+  },
+  {
+    "course": "Bachelor of Science (B.Sc)",
+    "university": "Sambalpur University",
+    "year": "2020",
+    "location": "Rourkela, Odisha",
+    "note": "Alongside academics, worked part-time in an accounts role to become financially independent and gained hands-on experience in Tally ERP, GST, and business tools. Also explored Siebel CRM and developed a renewed interest in software and technology."
+  },
+  {
+    "course": "Higher Secondary Education (Class 12 - I.Sc)",
+    "university": "Council of Higher Secondary Education, Odisha",
+    "year": "2015",
+    "location": "Rourkela, Odisha",
+    "note": "Studied core science subjects (PCM) while independently exploring modern technologies. Developed strong social values and actively participated in volunteering activities like blood donation."
+  },
+  {
+    "course": "Matriculation (Class 10)",
+    "university": "Board of Secondary Education, Odisha",
+    "year": "2013",
+    "location": "Rourkela, Odisha",
+    "note": "Built strong academic discipline and foundation in computer knowledge, sportsmanship, and social collaboration. Formed lifelong friendships and values that continue to influence my professional journey."
+  }
+]
