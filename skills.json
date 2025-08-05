@@ -1,34 +1,77 @@
 [
-  { "name": "JavaScript", "icon": "🟨", "category": "languages" },
-  { "name": "HTML5", "icon": "🟧", "category": "languages" },
-  { "name": "CSS3", "icon": "🔷", "category": "languages" },
-  { "name": "XML", "icon": "🗂️", "category": "languages" },
-  { "name": "Python", "icon": "🧩", "category": "languages" },
-  { "name": "SQL", "icon": "💾", "category": "languages" },
+  
+  { "name": "JavaScript", "icon": "🟨", "category": "languages", "level": "intermediate" },
+  { "name": "HTML5", "icon": "🟧", "category": "languages", "level": "intermediate" },
+  { "name": "CSS3", "icon": "🔷", "category": "languages", "level": "intermediate" },
+  { "name": "XML", "icon": "🗂️", "category": "languages", "level": "beginner" },
+  { "name": "Python", "icon": "🧩", "category": "languages", "level": "beginner" },
+  { "name": "SQL", "icon": "💾", "category": "languages", "level": "intermediate" },
+  { "name": "Java", "icon": "☕", "category": "languages", "level": "beginner" },
+  { "name": "PHP", "icon": "🐘", "category": "languages", "level": "beginner" },
+  { "name": "C#", "icon": "🔷", "category": "languages", "level": "beginner" },
 
-  { "name": "React.js", "icon": "⚛️", "category": "frameworks" },
-  { "name": "Redux", "icon": "🌀", "category": "frameworks" },
-  { "name": "Express.js", "icon": "🚂", "category": "frameworks" },
-  { "name": "Node.js", "icon": "🟩", "category": "frameworks" },
-  { "name": "Tailwind CSS", "icon": "🌬️", "category": "frameworks" },
-  { "name": "Bootstrap", "icon": "🎀", "category": "frameworks" },
+  
+  { "name": "React.js", "icon": "⚛️", "category": "frameworks", "level": "intermediate" },
+  { "name": "Node.js", "icon": "🟩", "category": "frameworks", "level": "intermediate" },
+  { "name": "Tailwind CSS", "icon": "🌬️", "category": "frameworks", "level": "intermediate" },
+  { "name": "Bootstrap", "icon": "🎀", "category": "frameworks", "level": "expert" },
+  { "name": "Redux", "icon": "🌀", "category": "frameworks", "level": "beginner" },
+  { "name": "Express.js", "icon": "🚂", "category": "frameworks", "level": "beginner" },
+  {"name":"Laravel","icon":"🕊️","category":"frameworks","level":"beginner"},
+  {"name":"React Native","icon":"📱","category":"frameworks","level":"beginner"},
+  {"name":"Spring Boot","icon":"🌱","category":"frameworks","level":"beginner"},
+  { "name": "Astro", "icon": "🌠", "category": "frameworks", "level": "beginner" },
+  { "name": ".NET Core", "icon": "🧱", "category": "frameworks", "level": "beginner" },
+  {"name":"Django","icon":"🦎","category":"frameworks","level":"beginner"},
+  {"name":"Flask","icon":"🍼","category":"frameworks","level":"beginner"},
+  {"name":"Font Awesome","icon":"⭐","category":"frameworks","level":"intermediate"},
 
-  { "name": "VS Code", "icon": "🧠", "category": "tools" },
-  { "name": "Git", "icon": "🔧", "category": "tools" },
-  { "name": "GitHub", "icon": "🐱", "category": "tools" },
-  { "name": "MongoDB Compass", "icon": "🧭", "category": "tools" },
-  { "name": "NPM/Yarn", "icon": "📦", "category": "tools" },
-  { "name": "MS Office", "icon": "📊", "category": "tools" },
-  { "name": "Tally", "icon": "💼", "category": "tools" },
-  { "name": "Canva", "icon": "🎨", "category": "tools" },
 
-  { "name": "MongoDB Atlas", "icon": "☁️", "category": "platforms" },
-  { "name": "Firebase", "icon": "🔥", "category": "platforms" },
-  { "name": "Netlify", "icon": "🌐", "category": "platforms" },
-  { "name": "RESTful APIs", "icon": "🔗", "category": "platforms" },
+  { "name": "MySQL", "icon": "🐬", "category": "databases", "level": "intermediate" },
+  { "name": "MongoDB", "icon": "🍃", "category": "databases", "level": "beginner" },
+  { "name": "MongoDB Compass", "icon": "🧭", "category": "databases", "level": "beginner" },
+  { "name": "MongoDB Atlas", "icon": "☁️", "category": "databases", "level": "beginner" },
+  
 
-  { "name": "Problem Solving", "icon": "🧩", "category": "soft" },
-  { "name": "Fast Learner", "icon": "⚡", "category": "soft" },
-  { "name": "Time Management", "icon": "⏱️", "category": "soft" },
-  { "name": "UI/UX Awareness", "icon": "🎯", "category": "soft" }
+  
+  { "name": "VS Code", "icon": "🧠", "category": "tools", "level": "expert" },
+  { "name": "Git", "icon": "🔧", "category": "tools", "level": "expert" },
+  { "name": "GitHub", "icon": "🐱", "category": "tools", "level": "expert" },
+  { "name": "NPM/Yarn", "icon": "📦", "category": "tools", "level": "intermediate" },
+  { "name": "MS Office", "icon": "📊", "category": "tools", "level": "intermediate" },
+  { "name": "Tally", "icon": "💼", "category": "tools", "level": "expert" },
+  { "name": "Docker", "icon": "🐳", "category": "tools", "level": "beginner" },
+  {"name":"Android Studio","icon":"🤖","category":"tools","level":"intermediate"},
+  {"name":"Chrome Extensions","icon":"🧩","category":"tools","level":"intermediate"},
+  {"name":"WSL2","icon":"🧱","category":"tools","level":"beginner"},
+  {"name":"yt-dlp","icon":"📥","category":"tools","level":"beginner"},
+
+  
+  { "name": "Canva", "icon": "🎨", "category": "design", "level": "intermediate" },
+  { "name": "Figma", "icon": "📐", "category": "design", "level": "beginner" },
+  { "name": "Adobe Photoshop", "icon": "🖼️", "category": "design", "level": "intermediate" },
+
+
+  
+ 
+  { "name": "GitHub Pages", "icon": "📁", "category": "platforms", "level": "expert" },
+  {"name":"Cloudflare","icon":"🌩️","category":"platforms","level":"intermediate"},
+  {"name":"Google Colab","icon":"🧪","category":"platforms","level":"intermediate"},
+  {"name":"Google Sites","icon":"🌍","category":"platforms","level":"intermediate"},
+  {"name":"Kaggle","icon":"📊","category":"platforms","level":"intermediate"},
+  {"name":"Stripe","icon":"💳","category":"platforms","level":"beginner"},
+  { "name": "Firebase", "icon": "🔥", "category": "platforms", "level": "intermediate" },
+  { "name": "Netlify", "icon": "🌐", "category": "platforms", "level": "expert" },
+  { "name": "RESTful APIs (Node.js)", "icon": "🔗", "category": "platforms", "level": "beginner" },
+  
+
+  
+  { "name": "Windows 10", "icon": "🪟", "category": "os", "level": "expert" },
+  { "name": "Windows 11", "icon": "🪟", "category": "os", "level": "expert" },
+
+  
+  { "name": "Problem Solving", "icon": "🧩", "category": "soft", "level": "expert" },
+  { "name": "Fast Learner", "icon": "⚡", "category": "soft", "level": "expert" },
+  { "name": "Time Management", "icon": "⏱️", "category": "soft", "level": "expert" },
+  { "name": "UI/UX Awareness", "icon": "🎯", "category": "soft", "level": "intermediate" }
 ]

@@ -88,24 +88,41 @@ function loadSkills() {
     .then(res => res.json())
     .then(data => {
       const map = {
-        languages: document.getElementById('lang-skills'),
-        frameworks: document.getElementById('framework-skills'),
-        tools: document.getElementById('tool-skills'),
-        platforms: document.getElementById('platform-skills'),
-        soft: document.getElementById('soft-skills')
+        languages: document.getElementById('languages'),
+        frameworks: document.getElementById('frameworks'),
+        databases: document.getElementById('databases'),
+        tools: document.getElementById('tools'),
+        platforms: document.getElementById('platforms'),
+        design: document.getElementById('design'),
+        os: document.getElementById('os'),
+        soft: document.getElementById('soft')
       };
+
+      Object.values(map).forEach(container => container.innerHTML = "");
+
+
       data.forEach(skill => {
         const div = document.createElement('div');
         div.className = 'skill-item';
         div.innerHTML = `
           <div class="skill-icon">${skill.icon}</div>
           <div class="skill-name">${skill.name}</div>
+          ${skill.level ? `<div class="skill-level">${capitalize(skill.level)}</div>` : ""}
         `;
         map[skill.category]?.appendChild(div);
       });
     })
     .catch(err => console.error("Failed to load skills:", err));
 }
+
+function capitalize(word) {
+  return word.charAt(0).toUpperCase() + word.slice(1);
+}
+
+// Call the function on page load
+window.addEventListener("DOMContentLoaded", loadSkills);
+
+
 
 function loadProjects() {
   fetch('projects.json')
@@ -118,7 +135,10 @@ function loadProjects() {
         card.innerHTML = `
           <h3>${project.name}</h3>
           <p>${project.desc}</p>
+          <div class="project-links">
           <a href="${project.github}" target="_blank" class="project-btn">View on GitHub</a>
+          ${project.live ? `<a href="${project.live}" target="_blank" class="project-btn live-btn">Live Demo</a>` : ''}
+          </div>
         `;
         container.appendChild(card);
       });
@@ -138,6 +158,7 @@ function loadEducation() {
           ${e.university} – ${e.year}
           ${e.location ? `<br><em>${e.location}</em>` : ''}
           ${e.specialization ? `<br>Specialization: ${e.specialization}` : ''}
+          ${e.note ? `<br><small style="color:#666;">${e.note}</small>` : ''}
           ${e.link ? `<br><a href="${e.link}" target="_blank">Verify Degree</a>` : ''}
         `;
         li.style.marginBottom = "15px";
@@ -146,6 +167,7 @@ function loadEducation() {
     })
     .catch(err => console.error("Failed to load education:", err));
 }
+
 
 function loadCertificates() {
   fetch('certificates.json')

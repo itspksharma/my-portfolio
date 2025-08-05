@@ -1,32 +1,60 @@
 [
+   {
+    "name": "My-Dev-Space – Developer Portfolio (Main Website)",
+    "desc": "My latest developer portfolio built using Astro and deployed with custom domain. Will include blog, CI/CD, and dynamic content. Full content update coming soon.",
+    "github": "https://github.com/itspksharma/my-dev-space",
+    "live": "https://www.askdevpk.me/"
+  },
   {
-    "name": "Mood Tab - Chrome Extension",
-    "desc": "Live animated new tab with mood-based videos, quotes, weather, and search history.",
+    "name": "Mood Tab – Chrome Extension",
+    "desc": "A mood-based animated new-tab Chrome extension featuring curated background videos, motivational quotes, real-time weather, and Google search with history — developed using JavaScript and Open APIs.",
     "github": "https://github.com/itspksharma/chrome-mood-tab-extension"
   },
   {
-    "name": "Hospital Management System",
-    "desc": "Basic hospital admin panel for managing patients, staff, appointments using ASP.NET.",
+    "name": "Just‑Download – Desktop App",
+    "desc": "A simple cross-platform Python-based desktop application to download videos from YouTube, Instagram, and Facebook. Built using Tkinter and yt-dlp. Legacy version — next-gen redesign planned.",
+    "github": "https://github.com/itspksharma/just-download"
+  },
+  {
+    "name": "Just‑Download – Android Backend (Planned)",
+    "desc": "Python Flask-based backend for the Android version of Just‑Download. Built to handle video download requests from mobile UI. Frontend in progress.",
+    "github": "https://github.com/itspksharma/just-download-for-android"
+  },
+  {
+    "name": "Teaste of Italia – Food Order App (Planned)",
+    "desc": "A vegetarian food ordering app featuring live menu, user authentication, and order management panel. MERN-based, currently under active planning and design phase.",
+    "github": "https://github.com/itspksharma/teaste-of-italia-food-order-app"
+  },
+  {
+    "name": "Hospital Management System (Legacy)",
+    "desc": "An early version of a hospital admin panel built using ASP.NET and SQL Server for managing appointments, staff, and patients. Legacy project — planned to be re-developed with modern tech stack.",
     "github": "https://github.com/itspksharma/Hospital_MS"
   },
   {
-    "name": "Responsive Portfolio Website",
-    "desc": "Personal developer portfolio with dynamic sections using HTML, CSS, JS and JSON data.",
-    "github": "https://github.com/itspksharma/my-portfolio"
-  },
-  {
-    "name": "LifeLine - Blood Donor System (planned)",
-    "desc": "A full MERN stack app for donor registration, searching, urgent requests, and admin panel.",
+    "name": "Lifeline – Blood Donor System (Coming Soon)",
+    "desc": "A real-world MERN-based platform to connect blood donors and seekers with urgent request notifications, search filters, and admin dashboard. Currently in design and planning stage.",
     "github": "https://github.com/itspksharma/lifeline-blood-donor-system"
   },
   {
-    "name": "Track-It - Expense Tracker (planned)",
-    "desc": "Simple personal expense tracker using local storage, chart.js and responsive layout.",
-    "github": "https://github.com/itspksharma/track-it-expense-tracker"
+    "name": "Grih‑Chhaya – Rental App (Demo Version)",
+    "desc": "An Indian-themed rental application for short cultural stays. Demo built using MERN stack. Full version under development with advanced filtering and admin features.",
+    "github": "https://github.com/itspksharma/grih-chhaya_a_rental_app"
   },
   {
-    "name": "Teaste of Italia - Food Order App (coming soon)",
-    "desc": "Vegetarian food ordering web app with live menu, user login and admin order panel.",
-    "github": "https://github.com/itspksharma/teaste-of-italia-food-order-app"
+    "name": "Sky‑Verse – Weather UI (Demo Version)",
+    "desc": "A real-time weather experience project with immersive visuals and quote overlays. Built using JavaScript and weather APIs. Demo version uploaded — full update planned soon.",
+    "github": "https://github.com/itspksharma/sky-verse"
+  },
+  {
+    "name": "News Sathi – Reader App (Demo Version)",
+    "desc": "A minimalist Indian-themed news web app built using EJS and Express.js. Displays trending headlines with clean UI. Demo uploaded — being restructured with better APIs and mobile view.",
+    "github": "https://github.com/itspksharma/news-sathi"
+  },
+ 
+  {
+    "name": "Docker Multi‑Environment Setup",
+    "desc": "A centralized Docker setup for PHP, Node.js, MySQL, MongoDB, and other services — helps spin up dev environments faster across multiple stacks. Used in personal and client projects.",
+    "github": "https://github.com/itspksharma/itspksharma-docker-multi-env"
   }
 ]
+

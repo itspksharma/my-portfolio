@@ -1,7 +1,7 @@
 # 🧑‍💻 Pawan Kumar Sharma - Developer Portfolio
 
 This is my fully responsive, animated, and dynamic personal portfolio website built with HTML, CSS, and JavaScript. It showcases my skills, live projects, certifications, blogs, education, and contact info in a structured card-based layout — all powered by external JSON data for easy updates.
-
+🔗 **Live Preview**: [profile.askdevpk.me](https://profile.askdevpk.me)
 ---
 
 ## 🚀 Features
@@ -51,24 +51,57 @@ my-portfolio/
 
 ## 📸 Screenshots
 
-### 🔹 Home Section
-![Homepage](assets/screenshots/homepage.png)
+### 🔹 Home Page
+![Homepage](assets/screenshots/homepage-dark-theme.png)
 
-### 🔹 Skills Section
-![Skills](assets/screenshots/skills.png)
+### 🔹 Home Page Theme
+![Homepage](assets/screenshots/homepage-light-theme.png)
 
-### 🔹 Projects Section
-![Projects](assets/screenshots/projects.png)
+### 🔹 Coding Part
+![Coding](assets/screenshots/coding-behind-project.png)
+
+### 🔹 Navbar
+![Navbar](assets/screenshots/navbar.png)
+
+### 🔹 Projects page
+![Projects](assets/screenshots/project-section.png)
+
+### 🔹 Tab-View
+![Tab-view](assets/screenshots/tab-view.png)
+
+### 🔹 Skills Page
+![Skills](assets/screenshots/skills-section.png)
+
+### 🔹 Contact Page
+![Contact](assets/screenshots/contact-section.png)
+
+### 🔹 Mobile Theme
+![Mobile-Theme](assets/screenshots/mobile-light-theme.png)
+
+### 🔹 Responsive Contact
+![Responsive](assets/screenshots/mobile-responsive-contact.png)
+
+### 🔹 Mobile Responsive
+![Mobile-Responsive](assets/screenshots/mobile-responsive.png)
 
 
-### 🔹 Education Section
-![Homepage](assets/screenshots/education.png)
+## 🙌 Acknowledgments
 
-### 🔹 Certificate Section
-![Skills](assets/screenshots/certificates.png)
+> This portfolio is part of my self-growth journey as a Full Stack Developer. Feel free to fork, clone, or get inspired for your own version.  
+> For collaboration, feel free to reach out via 
+[LinkedIn](https://www.linkedin.com/in/itspksharma98) or [email](mailto:pawansharma.rkl@gmail.com).
 
-### 🔹 Blogs Section
-![Projects](assets/screenshots/blogs.png)
+---
 
-### 🔹 Mobile-View
-![Projects](assets/screenshots/mobile-view.png)
+## 🧠 About Me
+
+I’m a developer who believes in clean UI, meaningful backend logic, and continuous learning.  
+This project reflects my approach towards structured, scalable, and practical development.
+
+## 📌 License
+
+This project is open-source and available under the [MIT License](LICENSE).
+
+
+Thankyou - visit again
+---
