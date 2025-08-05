@@ -9,113 +9,109 @@
   <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 <body>
-  <header>
-    <video autoplay muted loop playsinline class="bg-video">
+  <div class="animated-bg"></div>
+
+  <!-- SIDEBAR NAV -->
+  <nav id="sidebar-nav">
+    <ul id="sidebar-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#certificates">Certificates</a></li>
+      <li><a href="#blogs">Blogs</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hamburger Menu -->
+  <button id="hamburger-menu">☰</button>
+
+  <main id="main-content">
+    <header>
+      <video autoplay muted loop playsinline class="bg-video">
         <source src="assets/bg-video.webm" type="video/webm">
         Your browser does not support the video tag.
-    </video>
-    <noscript>
+      </video>
+      <noscript>
         <img src="assets/bg-fallback.jpg" alt="Background" class="fallback-img" />
-    </noscript>
+      </noscript>
 
-    <div class="container">
-      <img src="assets/profile.jpg" alt="Pawan Sharma" class="profile-img"/>
-      <h1 id="typewriter"></h1>
-      <p class="subtitle">MERN Stack Developer | From Ledgers to Logic | Building Ideas That Work</p>
-      <div class="action-buttons">
-         <button id="theme-toggle">Toggle Theme</button>
-        <a href="assets/PawanKumarSharma_Resume.pdf" download class="resume-btn">Download Resume</a>
+      <div class="container">
+        <img src="assets/profile.jpg" alt="Pawan Sharma" class="profile-img"/>
+        <h1 id="typewriter"></h1>
+        <p class="subtitle">MERN Stack Developer | From Ledgers to Logic | Building Ideas That Work</p>
+        <div class="hero-buttons">
+          <a href="#contact" class="hero-btn">Contact</a>
+          <a href="assets/PawanKumarSharma_Resume.pdf" download class="hero-btn">Download Resume</a>
+        </div>
       </div>
-    </div>
-  </header>
+    </header>
 
-    <nav id="mobile-nav">
-    <button onclick="toggleMenu()">☰</button>
-    <ul id="nav-list">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#certificates">Certificates</a></li>
-        <li><a href="#blogs">Blogs</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-    </nav>
-
-
-  <section id="about" class="section-tab active">
-    <h2>👨‍💻 My Journey So Far</h2>
-    <p>I'm a full-stack developer with an MCA degree, specializing in the MERN stack and modern web technologies. 
+    <section id="about" class="section-tab active">
+      <h2>👨‍💻 My Journey So Far</h2>
+      <p>I'm a full-stack developer with an MCA degree, specializing in the MERN stack and modern web technologies. 
         I’ve built projects using JavaScript, React, Node.js, MongoDB, and REST APIs. Alongside my academic foundation, 
         I gained hands-on experience in tools like Tally and Excel, which gave me practical business insights that now help 
         me build more user-centric digital solutions. I'm focused on creating scalable applications and continuously exploring
-         AI and cloud technologies to level up my development workflow.
-    </p>
-  </section>
+        AI and cloud technologies to level up my development workflow.</p>
+    </section>
 
-  <section id="projects" class="section-tab">
-    <h2>💼 Practical Projects & Ideas</h2>
-    <div id="project-cards" class="project-grid"></div>
-        <!-- This will be filled dynamically -->
-    </ul>
-  </section>
+    <section id="projects" class="section-tab">
+      <h2>💼 Practical Projects & Ideas</h2>
+      <div id="project-cards" class="project-grid"></div>
+    </section>
 
-  <section id="skills" class="section-tab">
-    <h2>🛠 Tech Stack I Use</h2>
+    <section id="skills" class="section-tab">
+      <h2>🛠 Tech Stack I Use</h2>
+      <h3>Languages</h3>
+      <div class="skills-grid" id="lang-skills"></div>
+      <h3>Frameworks & Libraries</h3>
+      <div class="skills-grid" id="framework-skills"></div>
+      <h3>Productivity & Dev Tools</h3>
+      <div class="skills-grid" id="tool-skills"></div>
+      <h3>Platforms & APIs</h3>
+      <div class="skills-grid" id="platform-skills"></div>
+      <h3>Soft Skills</h3>
+      <div class="skills-grid" id="soft-skills"></div>
+    </section>
 
-    <h3>Languages</h3>
-    <div class="skills-grid" id="lang-skills"></div>
+    <section id="education" class="section-tab"> 
+      <h2>🎓 My Academic</h2>
+      <ul id="edu-list"></ul>
+    </section>
 
-    <h3>Frameworks & Libraries</h3>
-    <div class="skills-grid" id="framework-skills"></div>
+    <section id="certificates" class="section-tab">
+      <h2>📄 Certified Skills & Achievements</h2>
+      <div id="cert-cards" class="cert-grid"></div>
+    </section>
 
-    <h3>Productivity & Dev Tools</h3>
-    <div class="skills-grid" id="tool-skills"></div>
+    <section id="blogs" class="section-tab">
+      <h2>🔍 Insights & Experiences</h2>
+      <div id="blog-cards" class="blog-grid"></div>
+    </section>
 
-    <h3>Platforms & APIs</h3>
-    <div class="skills-grid" id="platform-skills"></div>
+    <section id="contact" class="section-tab">
+      <h2>📬 Let’s Connect</h2>
+      <p>Email: <a href="mailto:pawansharma.rkl@gmail.com">pawansharma.rkl@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/itspksharma98" target="_blank">itspksharma98</a></p>
+      <p>WhatsApp: <a href="https://wa.me/919658901536" target="_blank">Chat Now</a></p>
+    </section>
 
-    <h3>Soft Skills</h3>
-    <div class="skills-grid" id="soft-skills"></div>
-  </section>
-
-  
-  <section id="education" class="section-tab"> 
-    <h2>🎓 My Academic</h2>
-    <ul id="edu-list"></ul>
-  </section>
-  <section id="certificates" class="section-tab">
-    <h2>📄 Certified Skills & Achievements</h2>
-    <div id="cert-cards" class="cert-grid"></div>
-  </section>
-
-
-  <section id="blogs" class="section-tab">
-    <h2>🔍 Insights & Experiences</h2>
-    <div id="blog-cards" class="blog-grid"></div>
-  </section>
-
-
-
-  <section id="contact" class="section-tab">
-    <h2>📬 Let’s Connect</h2>
-    <p>Email: <a href="mailto:pawansharma.rkl@gmail.com">pawansharma.rkl@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/itspksharma98" target="_blank">itspksharma98</a></p>
-    <p>WhatsApp: <a href="https://wa.me/919658901536" target="_blank">Chat Now</a></p>
-  </section>
+    <footer>
+      <p>
+        All rights reserved. Made with ❤️ by 
+        <a href="https://www.linkedin.com/in/itspksharma98" target="_blank">Pawan Kumar Sharma</a> | © 2025
+      </p>
+    </footer>
+  </main>
 
   <button id="scroll-top">⬆ Top</button>
 
-<footer>
-  <p>
-    All rights reserved. Made with ❤️ by 
-    <a href="https://www.linkedin.com/in/itspksharma98" target="_blank">Pawan Kumar Sharma</a> | © 2025
-  </p>
-</footer>
-
-
-
   <script src="script.js"></script>
-  
+
+  <button id="theme-icon-toggle" title="Toggle Theme">
+    <span id="theme-icon">🌙</span>
+  </button>
 </body>
 </html>
