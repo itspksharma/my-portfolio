@@ -1,213 +1,294 @@
-// ==================== TYPEWRITER EFFECT ====================
-const typewriter = document.getElementById("typewriter");
-const text = "Pawan Kumar Sharma";
-let i = 0;
+// ==================== TYPEWRITER ====================
+(() => {
+  const el = document.getElementById("typewriter");
+  if (!el) return;
+  const text = "Pawan Kumar Sharma";
+  let i = 0;
+  (function type() {
+    if (i < text.length) {
+      el.innerHTML += text.charAt(i++);
+      setTimeout(type, 90);
+    }
+  })();
+})();
 
-function typeWriterEffect() {
-  if (i < text.length) {
-    typewriter.innerHTML += text.charAt(i);
-    i++;
-    setTimeout(typeWriterEffect, 100);
-  }
+// ==================== HELPERS ====================
+const $all = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+const $ = (sel, root = document) => root.querySelector(sel);
+
+// All sections under <main>
+const getSections = () => $all("main section");
+
+// Hide/Show helpers (Tailwind-friendly)
+function hide(el) {
+  if (!el) return;
+  el.classList.add("hidden");
 }
-typeWriterEffect();
+function show(el) {
+  if (!el) return;
+  el.classList.remove("hidden");
+}
 
-// ==================== THEME TOGGLE ====================
-document.addEventListener("DOMContentLoaded", () => {
-  const themeBtn = document.getElementById("theme-icon-toggle");
-  const themeIcon = document.getElementById("theme-icon");
-
-  function setThemeIcon(isDark) {
-    themeIcon.textContent = isDark ? "☀️" : "🌙";
-  }
-
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
-    document.body.classList.add("dark-mode");
-    setThemeIcon(true);
-  } else {
-    setThemeIcon(false);
-  }
-
-  themeBtn.addEventListener("click", () => {
-    const isDark = document.body.classList.toggle("dark-mode");
-    localStorage.setItem("theme", isDark ? "dark" : "light");
-    setThemeIcon(isDark);
+// Active link styling
+function setActiveNav(hash) {
+  const allLinks = $all('header nav a, #mobile-menu a');
+  allLinks.forEach(a => {
+    if (a.getAttribute("href") === hash) {
+      a.classList.add("text-indigo-600", "font-semibold");
+      a.setAttribute("aria-current", "page");
+    } else {
+      a.classList.remove("text-indigo-600", "font-semibold");
+      a.removeAttribute("aria-current");
+    }
   });
-});
+}
+
+// Show only one section by id
+function showSectionById(id) {
+  const sections = getSections();
+  sections.forEach(hide);
+  const target = document.getElementById(id);
+  if (target) show(target);
+
+  // Close mobile menu if open
+  const mobile = $("#mobile-menu");
+  if (mobile && !mobile.classList.contains("hidden")) {
+    mobile.classList.add("hidden");
+  }
+
+  // Update active nav
+  setActiveNav(`#${id}`);
+
+  // Scroll to top of page (since others are hidden)
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// ==================== THEME TOGGLE (Tailwind dark class on <html>) ====================
+document.addEventListener("DOMContentLoaded", () => {
+    const root = document.documentElement; // <html>
+    const themeBtn = document.getElementById("theme-icon-toggle");
+    const themeIcon = document.getElementById("theme-icon");
+
+    function setThemeIcon(isDark) {
+      themeIcon.textContent = isDark ? "☀️" : "🌙";
+    }
+
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      root.classList.add("dark");
+      setThemeIcon(true);
+    } else if (savedTheme === "light") {
+      root.classList.remove("dark");
+      setThemeIcon(false);
+    } else {
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      root.classList.toggle("dark", prefersDark);
+      setThemeIcon(prefersDark);
+    }
+
+    themeBtn.addEventListener("click", () => {
+      const isDark = root.classList.toggle("dark");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+      setThemeIcon(isDark);
+    });
+  });
+
+// ==================== NAV + SECTION ROUTER ====================
+(function initRouter() {
+  // Intercept clicks on all in-page links
+  function handleAnchorClick(e) {
+    const href = this.getAttribute("href") || "";
+    if (!href.startsWith("#") || href === "#") return; // ignore external or empty
+    e.preventDefault();
+    const id = href.slice(1);
+    if (!id) return;
+    // Only show if section exists
+    if (document.getElementById(id)) {
+      showSectionById(id);
+      history.replaceState(null, "", `#${id}`); // keep hash without page jump
+    }
+  }
+
+  // Desktop links
+  $all("header nav a").forEach(a => a.addEventListener("click", handleAnchorClick));
+  // Mobile links
+  $all("#mobile-menu a").forEach(a => a.addEventListener("click", handleAnchorClick));
+
+  // Hamburger
+  const hamburger = $("#hamburger");
+  const mobileMenu = $("#mobile-menu");
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+  }
+
+  // Initial section: use hash if valid, else show #home
+  window.addEventListener("DOMContentLoaded", () => {
+    const hash = window.location.hash || "#home";
+    const id = hash.replace("#", "");
+    if (document.getElementById(id)) {
+      showSectionById(id);
+    } else {
+      showSectionById("home");
+    }
+  });
+})();
 
 // ==================== SCROLL TO TOP ====================
-const scrollTopBtn = document.getElementById("scroll-top");
+(function initScrollTop() {
+  const btn = $("#scroll-top");
+  if (!btn) return;
+  const toggle = () => {
+    if (window.scrollY > 300) btn.style.display = "block";
+    else btn.style.display = "none";
+  };
+  window.addEventListener("scroll", toggle);
+  btn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+  toggle();
+})();
 
-window.addEventListener("scroll", () => {
-  scrollTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
-});
-
-scrollTopBtn.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
-
-// ==================== MOBILE NAV TOGGLE ====================
-const hamburger = document.getElementById("hamburger-menu");
-const sidebar = document.getElementById("sidebar-nav");
-
-hamburger.addEventListener("click", () => {
-  sidebar.classList.toggle("show");
-});
-
-// ==================== DEFAULT ACTIVE TAB ====================
-document.addEventListener("DOMContentLoaded", () => {
-  const allSections = document.querySelectorAll(".section-tab");
-  allSections.forEach(sec => sec.classList.remove("active"));
-  document.getElementById("about").classList.add("active");
-});
-
-// ==================== NAVIGATION TABS ====================
-const navLinks = document.querySelectorAll("#sidebar-links a");
-const allSections = document.querySelectorAll(".section-tab");
-
-navLinks.forEach(link => {
-  link.addEventListener("click", e => {
-    e.preventDefault();
-    const targetId = link.getAttribute("href").substring(1);
-
-    allSections.forEach(sec => sec.classList.remove("active"));
-    const target = document.getElementById(targetId);
-    if (target) target.classList.add("active");
-
-    navLinks.forEach(n => n.classList.remove("active"));
-    link.classList.add("active");
-
-    sidebar.classList.remove("show"); // auto-close on mobile after click
-  });
-});
-
-// ==================== LOAD DATA ====================
-function loadSkills() {
-  fetch('skills.json')
-    .then(res => res.json())
-    .then(data => {
-      const map = {
-        languages: document.getElementById('languages'),
-        frameworks: document.getElementById('frameworks'),
-        databases: document.getElementById('databases'),
-        tools: document.getElementById('tools'),
-        platforms: document.getElementById('platforms'),
-        design: document.getElementById('design'),
-        os: document.getElementById('os'),
-        soft: document.getElementById('soft')
-      };
-
-      Object.values(map).forEach(container => container.innerHTML = "");
-
-
-      data.forEach(skill => {
-        const div = document.createElement('div');
-        div.className = 'skill-item';
-        div.innerHTML = `
-          <div class="skill-icon">${skill.icon}</div>
-          <div class="skill-name">${skill.name}</div>
-          ${skill.level ? `<div class="skill-level">${capitalize(skill.level)}</div>` : ""}
-        `;
-        map[skill.category]?.appendChild(div);
-      });
-    })
-    .catch(err => console.error("Failed to load skills:", err));
+// ==================== DATA LOADING (JSON) ====================
+async function safeFetchJson(urls) {
+  // Try multiple URLs (for projects we’ll try projects.json then project.json)
+  for (const url of urls) {
+    try {
+      const res = await fetch(url, { cache: "no-store" });
+      if (res.ok) return await res.json();
+    } catch (_) {}
+  }
+  throw new Error("All sources failed: " + urls.join(", "));
 }
 
-function capitalize(word) {
-  return word.charAt(0).toUpperCase() + word.slice(1);
+async function loadSkills() {
+  try {
+    const data = await safeFetchJson(["skills.json"]);
+    const map = {
+      languages: $("#languages"),
+      frameworks: $("#frameworks"),
+      databases: $("#databases"),
+      tools: $("#tools"),
+      platforms: $("#platforms"),
+      design: $("#design"),
+      os: $("#os"),
+      soft: $("#soft"),
+    };
+    Object.values(map).forEach(c => c && (c.innerHTML = ""));
+
+    data.forEach(skill => {
+      const container = map[skill.category];
+      if (!container) return;
+      const div = document.createElement("div");
+      // Tailwind-ish chips
+      div.className = "flex items-center gap-2 px-3 py-2 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm";
+      div.innerHTML = `
+        <span class="text-lg">${skill.icon || "🔹"}</span>
+        <span class="font-medium">${skill.name || ""}</span>
+        ${skill.level ? `<span class="text-xs px-2 py-0.5 rounded-full border ml-auto">${capitalize(skill.level)}</span>` : ""}
+      `;
+      container.appendChild(div);
+    });
+  } catch (e) {
+    console.error("Failed to load skills:", e);
+  }
 }
 
-// Call the function on page load
-window.addEventListener("DOMContentLoaded", loadSkills);
-
-
-
-function loadProjects() {
-  fetch('projects.json')
-    .then(res => res.json())
-    .then(data => {
-      const container = document.getElementById('project-cards');
-      data.forEach(project => {
-        const card = document.createElement('div');
-        card.className = 'project-card';
-        card.innerHTML = `
-          <h3>${project.name}</h3>
-          <p>${project.desc}</p>
-          <div class="project-links">
-          <a href="${project.github}" target="_blank" class="project-btn">View on GitHub</a>
-          ${project.live ? `<a href="${project.live}" target="_blank" class="project-btn live-btn">Live Demo</a>` : ''}
-          </div>
-        `;
-        container.appendChild(card);
-      });
-    })
-    .catch(err => console.error("Failed to load projects:", err));
+async function loadProjects() {
+  try {
+    
+    const data = await safeFetchJson(["projects.json", "project.json"]);
+    const container = $("#project-cards");
+    if (!container) return;
+    container.innerHTML = "";
+    data.forEach(p => {
+      const card = document.createElement("div");
+      card.className = "p-4 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm space-y-2";
+      card.innerHTML = `
+        <h3 class="text-lg font-semibold">${p.name || ""}</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-300">${p.desc || ""}</p>
+        <div class="flex gap-3 pt-1">
+          ${p.github ? `<a href="${p.github}" target="_blank" class="px-3 py-1 rounded-md border hover:bg-gray-100 dark:hover:bg-gray-800">GitHub</a>` : ""}
+          ${p.live ? `<a href="${p.live}" target="_blank" class="px-3 py-1 rounded-md border hover:bg-gray-100 dark:hover:bg-gray-800">Live</a>` : ""}
+        </div>
+      `;
+      container.appendChild(card);
+    });
+  } catch (e) {
+    console.error("Failed to load projects:", e);
+  }
 }
 
-function loadEducation() {
-  fetch('education.json')
-    .then(res => res.json())
-    .then(data => {
-      const list = document.getElementById('edu-list');
-      data.forEach(e => {
-        const li = document.createElement('li');
-        li.innerHTML = `
-          <strong>${e.course}</strong><br>
-          ${e.university} – ${e.year}
-          ${e.location ? `<br><em>${e.location}</em>` : ''}
-          ${e.specialization ? `<br>Specialization: ${e.specialization}` : ''}
-          ${e.note ? `<br><small style="color:#666;">${e.note}</small>` : ''}
-          ${e.link ? `<br><a href="${e.link}" target="_blank">Verify Degree</a>` : ''}
-        `;
-        li.style.marginBottom = "15px";
-        list.appendChild(li);
-      });
-    })
-    .catch(err => console.error("Failed to load education:", err));
+async function loadEducation() {
+  try {
+    const data = await safeFetchJson(["education.json"]);
+    const list = $("#edu-list");
+    if (!list) return;
+    list.innerHTML = "";
+    data.forEach(ed => {
+      const li = document.createElement("li");
+      li.className = "mb-4";
+      li.innerHTML = `
+        <strong>${ed.course || ""}</strong><br>
+        ${ed.university || ""} – ${ed.year || ""} 
+        ${ed.location ? `<br><em>${ed.location}</em>` : ""}
+        ${ed.specialization ? `<br>Specialization: ${ed.specialization}` : ""}
+        ${ed.note ? `<br><small class="text-gray-500">${ed.note}</small>` : ""}
+        ${ed.link ? `<br><a href="${ed.link}" target="_blank" class="underline">Verify Degree</a>` : ""}
+      `;
+      list.appendChild(li);
+    });
+  } catch (e) {
+    console.error("Failed to load education:", e);
+  }
 }
 
-
-function loadCertificates() {
-  fetch('certificates.json')
-    .then(res => res.json())
-    .then(data => {
-      const container = document.getElementById('cert-cards');
-      data.forEach(cert => {
-        const card = document.createElement('div');
-        card.className = 'cert-card';
-        card.innerHTML = `
-          <h3>${cert.title}</h3>
-          <p>${cert.organization}</p>
-          <p class="cert-year">${cert.year}</p>
-          ${cert.link ? `<a href="${cert.link}" target="_blank" class="cert-btn">View Certificate</a>` : ''}
-        `;
-        container.appendChild(card);
-      });
-    })
-    .catch(err => console.error("Failed to load certificates:", err));
+async function loadCertificates() {
+  try {
+    const data = await safeFetchJson(["certificates.json"]);
+    const container = $("#cert-cards");
+    if (!container) return;
+    container.innerHTML = "";
+    data.forEach(c => {
+      const card = document.createElement("div");
+      card.className = "p-4 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm";
+      card.innerHTML = `
+        <h3 class="font-semibold">${c.title || ""}</h3>
+        <p class="text-sm">${c.organization || ""}</p>
+        <p class="text-xs text-gray-500">${c.year || ""}</p>
+        ${c.link ? `<a href="${c.link}" target="_blank" class="inline-block mt-2 underline">View Certificate</a>` : ""}
+      `;
+      container.appendChild(card);
+    });
+  } catch (e) {
+    console.error("Failed to load certificates:", e);
+  }
 }
 
-function loadBlogs() {
-  fetch('blogs.json')
-    .then(res => res.json())
-    .then(data => {
-      const container = document.getElementById('blog-cards');
-      data.forEach(blog => {
-        const card = document.createElement('div');
-        card.className = 'blog-card';
-        card.innerHTML = `
-          <h3>${blog.title}</h3>
-          <a href="${blog.link}" target="_blank" class="blog-btn">Read Blog</a>
-        `;
-        container.appendChild(card);
-      });
-    })
-    .catch(err => console.error("Failed to load blogs:", err));
+async function loadBlogs() {
+  try {
+    const data = await safeFetchJson(["blogs.json"]);
+    const container = $("#blog-cards");
+    if (!container) return;
+    container.innerHTML = "";
+    data.forEach(b => {
+      const card = document.createElement("div");
+      card.className = "p-4 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm";
+      card.innerHTML = `
+        <h3 class="font-semibold">${b.title || ""}</h3>
+        ${b.link ? `<a href="${b.link}" target="_blank" class="inline-block mt-2 underline">Read Blog</a>` : ""}
+      `;
+      container.appendChild(card);
+    });
+  } catch (e) {
+    console.error("Failed to load blogs:", e);
+  }
 }
 
-// Load all content after DOM is ready
+function capitalize(w = "") {
+  return w ? w.charAt(0).toUpperCase() + w.slice(1) : "";
+}
+
+// Load JSON after DOM ready
 document.addEventListener("DOMContentLoaded", () => {
   loadSkills();
   loadProjects();
@@ -216,32 +297,19 @@ document.addEventListener("DOMContentLoaded", () => {
   loadBlogs();
 });
 
-// ==================== DISABLE RIGHT-CLICK ====================
-document.addEventListener('contextmenu', event => event.preventDefault());
-document.onkeydown = function(e) {
-  if (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'c')) {
-    e.preventDefault();
-    return false;
-  }
-};
-
-// ===== Hero Contact Button Fix =====
-document.querySelectorAll('a[href="#contact"]').forEach(link => {
+// ==================== HERO CONTACT (already covered by router, but keep explicit) ====================
+$all('a[href="#contact"]').forEach(link => {
   link.addEventListener("click", e => {
     e.preventDefault();
-    
-    // Hide all tabs
-    document.querySelectorAll(".section-tab").forEach(sec => sec.classList.remove("active"));
-    
-    // Show Contact section
-    document.getElementById("contact").classList.add("active");
-
-    // Update nav active state
-    document.querySelectorAll("#nav-list a, #sidebar-links a").forEach(n => n.classList.remove("active"));
-    const matchingNav = document.querySelector('#nav-list a[href="#contact"], #sidebar-links a[href="#contact"]');
-    if (matchingNav) matchingNav.classList.add("active");
-
-    // Scroll to it
-    document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+    showSectionById("contact");
+    history.replaceState(null, "", "#contact");
   });
+});
+
+// ==================== DISABLE RIGHT-CLICK / HOTKEYS ====================
+document.addEventListener("contextmenu", e => e.preventDefault());
+document.addEventListener("keydown", e => {
+  if (e.ctrlKey && ["u", "s", "c"].includes(e.key.toLowerCase())) {
+    e.preventDefault();
+  }
 });

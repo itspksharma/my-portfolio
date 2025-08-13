@@ -1,58 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Pawan Sharma | Portfolio</title>
+  
   <link rel="icon" href="assets/favicon.ico" />
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://unpkg.com/scrollreveal"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['Inter', 'system-ui', 'sans-serif']
+        },
+        colors: {
+          primary: '#2563eb', // Google Blue-ish
+          secondary: '#9333ea', // Premium purple accent
+        },
+        boxShadow: {
+          premium: '0 4px 20px rgba(0,0,0,0.1)',
+        }
+      }
+    }
+  }
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+
+  <link rel ="stylesheet" href="style.css" />
+
 </head>
-<body>
-  <div class="animated-bg"></div>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 relative">
 
-  <!-- SIDEBAR NAV -->
-  <nav id="sidebar-nav">
-    <ul id="sidebar-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#certificates">Certificates</a></li>
-      <li><a href="#blogs">Blogs</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+<!-- Navbar -->
+<header class="fixed w-full top-0 left-0 z-50 bg-white/70 dark:bg-gray-900/70 backdrop-blur-md shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+    <a href="#home" class="text-lg font-bold tracking-wide text-violet-600 dark:text-violet-400">Pawan's Profile</a>
+    <nav class="hidden md:flex space-x-6">
+      <a href="#home" class="hover:text-indigo-500">Home</a>
+      <a href="#about" class="hover:text-indigo-500">About</a>
+      <a href="#skills" class="hover:text-indigo-500">Skills</a>
+      <a href="#projects" class="hover:text-indigo-500">Projects</a>
+      <a href="#education" class="hover:text-indigo-500">Education</a>
+      <a href="#certificates" class="hover:text-indigo-500">Certificates</a>
+      <a href="#blogs" class="hover:text-indigo-500">Blogs</a>
+      <a href="#contact" class="hover:text-indigo-500">Contact</a>
+    </nav>
+    <div class="flex items-center space-x-4">
+      <button id="theme-icon-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
+        <span id="theme-icon">🌙</span>
+      </button>
+      <button id="hamburger" class="md:hidden p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700">☰</button>
+    </div>
+  </div>
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-900 px-4 pb-4 space-y-2">
+    <a href="#home" class="block hover:text-indigo-500">Home</a>
+    <a href="#about" class="block hover:text-indigo-500">About</a>
+    <a href="#skills" class="block hover:text-indigo-500">Skills</a>
+    <a href="#projects" class="block hover:text-indigo-500">Projects</a>
+    <a href="#education" class="block hover:text-indigo-500">Education</a>
+    <a href="#certificates" class="block hover:text-indigo-500">Certificates</a>
+    <a href="#blogs" class="block hover:text-indigo-500">Blogs</a>
+    <a href="#contact" class="block hover:text-indigo-500">Contact</a>
+  </div>
+</header>
 
-  <!-- Hamburger Menu -->
-  <button id="hamburger-menu">☰</button>
+<main id="main-content" class="pt-16"> <!-- added padding to avoid navbar overlap -->
 
-  <main id="main-content">
-    <header>
-      <video autoplay muted loop playsinline class="bg-video">
-        <source src="assets/bg-video.webm" type="video/webm">
-        Your browser does not support the video tag.
-      </video>
-      <noscript>
-        <img src="assets/bg-fallback.jpg" alt="Background" class="fallback-img" />
-      </noscript>
 
-      <div class="container">
-        <img src="assets/profile.jpg" alt="Pawan Sharma" class="profile-img"/>
-        <h1 id="typewriter"></h1>
-        <p class="subtitle">MERN Stack Developer | From Ledgers to Logic | Building Ideas That Work</p>
-        <div class="hero-buttons">
-          <a href="#contact" class="hero-btn">Contact</a>
-          <a href="assets/PawanKumarSharma_Resume.pdf" download class="hero-btn">Download Resume</a>
-        </div>
-      </div>
-    </header>
+<!-- Home Section  -->
+<section id="home" class="relative h-screen flex items-center justify-center text-center overflow-hidden">
+      <div class="area">
+			<ul class="circles">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
 
-    <section id="about" class="section-tab active">
-      
-      <h2>👨‍💻 My Journey So Far</h2>
-<p>
-  Hello, I'm Pawan — a versatile Full Stack Developer specializing in the MERN stack, with a solid foundation in both technology and business operations. With hands-on experience from internships and my previous roles, I’ve built scalable and responsive web applications using React.js, Node.js, Express.js, and MongoDB.
+  <!-- <video autoplay muted loop playsinline class="bg-video">
+    <source src="assets/bg-video.webm" type="video/webm">
+  </video>
+  <noscript>
+    <img src="assets/bg-fallback.jpg" alt="Background" class="fallback-img" />
+  </noscript> -->
+  <div class="relative z-10 max-w-2xl px-4 animate-fade-in">
+    <img src="assets/profile.jpg" alt="Pawan Sharma" 
+         class="w-36 h-36 rounded-full mx-auto shadow-lg border-4 border-green-200" />
+    <h1 id="typewriter" class="mt-4 text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"></h1>
+    <p class="mt-2 text-lg text-green-500 ">MERN Stack Developer | From Ledgers to Logic | Building Ideas That Work</p>
+    <div class="mt-6 flex justify-center space-x-4">
+      <a href="#contact" class="btn px-5 py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-full shadow">Contact</a>
+      <a href="assets/PawanKumarSharma_Resume.pdf" download class="btn px-5 py-2 bg-gray-100 hover:bg-gray-200 text-gray-900 rounded-full shadow">Download Resume</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- About -->
+<section id="about" class="max-w-5xl mx-auto px-4 py-16">
+  <h2 class="text-3xl font-bold text-indigo-600 mb-4">👨‍💻 My Journey So Far</h2>
+  <p class="leading-relaxed">
+    Hello, I'm Pawan — a versatile Full Stack Developer specializing in the MERN stack, with a solid foundation in both technology and business operations. With hands-on experience from internships and my previous roles, I’ve built scalable and responsive web applications using React.js, Node.js, Express.js, and MongoDB.
   <br><br>
 
   I enjoy working across the full development lifecycle — from crafting clean, intuitive user interfaces to developing secure APIs and managing data workflows. My current focus is on building self-driven, real-world projects that demonstrate my technical capabilities and problem-solving approach. I'm consistently upskilling to align myself with modern development standards, aiming to grow alongside a forward-thinking team where I can contribute meaningfully and evolve with the organization.
@@ -74,16 +135,16 @@
   <br><br>
 
   🚀 Let’s connect and build something valuable together.
-</p>
-<p style="margin-top: 20px; font-style: italic; text-align: center;">
+  </p>
+  <p style="margin-top: 20px; font-style: italic; text-align: center;">
   📖 <strong>कर्मण्येवाधिकारस्ते मा फलेषु कदाचन ।<br>
   मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि ॥</strong><br>
   <small>(Bhagavad Gita 2.47)</small><br><br>
   "You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions. Never consider yourself the cause of the results of your activities, nor be attached to inaction."
 </p>
+</section>
 
-
-    </section>
+</section>
 
     <section id="projects" class="section-tab">
       <h2>💼 Practical Projects & Ideas</h2>
@@ -158,23 +219,17 @@
     Let’s build something meaningful — one line of clean code at a time. 🚀
   </p>
 </section>
+</main>
 
-
-    <footer>
+<footer class="fixed bottom-0 w-full bg-gray-900 text-gray-200 text-center py-4 shadow-lg">
   <p>
     © 2025 | Designed & Developed by 
-    <a href="https://www.askdevpk.me/" target="_blank">Pawan Kumar Sharma</a> — Full Stack Developer
+    <a href="https://www.askdevpk.me/" target="_blank" class="text-indigo-400 hover:text-indigo-300">Pawan Kumar Sharma</a> — Full Stack Developer
   </p>
 </footer>
 
-  </main>
+<button id="scroll-top" class="hidden fixed bottom-20 right-5 bg-indigo-600 text-white p-3 rounded-full shadow-lg hover:bg-indigo-500 transition">⬆ Top</button>
 
-  <button id="scroll-top">⬆ Top</button>
-
-  <script src="script.js"></script>
-
-  <button id="theme-icon-toggle" title="Toggle Theme">
-    <span id="theme-icon">🌙</span>
-  </button>
+<script src="script.js"></script>
 </body>
 </html>
